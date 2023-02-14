@@ -8,30 +8,28 @@
     android:background="@drawable/background_gradient"
     tools:context=".LoginActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/uiTvTitle"
-        android:layout_width="wrap_content"
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/uiIvAppLogo"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_baseline_person_pin_24"
-        android:text="Digi Class"
-        android:drawablePadding="5dp"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/uiCvCard"
+       android:layout_marginVertical="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/uiCvCard"
+        app:srcCompat="@drawable/ic_logo" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/uiCvCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
         android:layout_marginHorizontal="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_marginVertical="40dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/uiIvAppLogo"
+        app:layout_constraintStart_toStartOf="@+id/uiIvAppLogo"
+        app:layout_constraintTop_toBottomOf="@+id/uiIvAppLogo">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -56,21 +54,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="20dp"
-                app:boxCornerRadiusTopStart="10dp"
-                app:boxCornerRadiusTopEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusBottomEnd="10dp"
-                app:startIconDrawable="@drawable/ic_baseline_person_pin_24"
-                app:layout_constraintStart_toStartOf="@+id/uiTvLogin"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/uiTvLogin"
-                app:layout_constraintTop_toBottomOf="@+id/uiTvLogin">
+                app:layout_constraintStart_toStartOf="@+id/uiTvLogin"
+                app:layout_constraintTop_toBottomOf="@+id/uiTvLogin"
+                app:startIconDrawable="@drawable/ic_baseline_person_pin_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/uiTvSignInUserEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="Enter your Email :" />
+                    android:hint="Enter your Email :"
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -80,22 +78,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="20dp"
-                app:boxCornerRadiusTopStart="10dp"
-                app:boxCornerRadiusTopEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusBottomEnd="10dp"
-                app:passwordToggleEnabled="true"
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
-                app:layout_constraintStart_toStartOf="@+id/uiTILSignInUserEmailLable"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/uiTILSignInUserEmailLable"
-                app:layout_constraintTop_toBottomOf="@+id/uiTILSignInUserEmailLable">
+                app:layout_constraintStart_toStartOf="@+id/uiTILSignInUserEmailLable"
+                app:layout_constraintTop_toBottomOf="@+id/uiTILSignInUserEmailLable"
+                app:passwordToggleEnabled="true"
+                app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/uiTvSignInUserPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Enter your Password :"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -103,7 +101,7 @@
                 android:id="@+id/uiBtSigup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
+                android:layout_marginVertical="40dp"
                 android:background="@drawable/button_corners"
                 android:text="Sign In"
                 android:textColor="@color/white"
@@ -117,9 +115,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="20dp"
                 android:text="Doesn't Have an account"
-                app:layout_constraintStart_toStartOf="@+id/uiBtSigup"
                 app:layout_constraintEnd_toEndOf="@+id/uiBtSigup"
-                app:layout_constraintTop_toBottomOf="@+id/uiBtSigup"/>
+                app:layout_constraintStart_toStartOf="@+id/uiBtSigup"
+                app:layout_constraintTop_toBottomOf="@+id/uiBtSigup" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/uiTvSignIn"
@@ -127,12 +125,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:text="SignUp"
-                android:textStyle="bold"
                 android:textSize="14dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/uiTvSignInLabel"
                 app:layout_constraintStart_toStartOf="@+id/uiTvSignInLabel"
                 app:layout_constraintTop_toBottomOf="@+id/uiTvSignInLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvForgetPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Forgot Password?"
+                android:textColor="#115ede"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/uiTILUserEmailLable"
+                app:layout_constraintTop_toBottomOf="@+id/uiTILUserEmailLable" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

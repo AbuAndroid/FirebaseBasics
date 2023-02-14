@@ -1,5 +1,6 @@
 package com.example.firebasebasics
 
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -73,6 +74,10 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun createAccount() {
+        val loadingBar = ProgressDialog(this)
+        loadingBar.setMessage("Creating Account..")
+        loadingBar.setCanceledOnTouchOutside(false)
+        loadingBar.show()
         if(checkValidInput()){
             userName = binding.uiTvSignInUserName.text.toString().trim()
             userEmail = binding.uiTvSignInUserEmail.text.toString().trim()
@@ -85,6 +90,7 @@ class RegisterActivity : AppCompatActivity() {
                         sendEmailVerification()
                         startActivity(Intent(this,HomeActivity::class.java))
                         finish()
+                        loadingBar.dismiss()
                     }else{
                         Toast.makeText(this,"Failed To Authenticate...!",Toast.LENGTH_SHORT).show()
                     }
